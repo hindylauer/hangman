@@ -4,7 +4,7 @@
 
 
 ## Overview
-This repo is for the software implementation for the classic game of hangman.
+This repo is for the software implementation of the classic game of hangman.
 This software will enable a player to play against the computer.
 A description of the game plus the requirements of this implementation are provided below.
 
