@@ -13,3 +13,4 @@ A word is randomly picked by the computer. The computer generates lines for the 
 
 **The full spec for the game is in the repo.**
 
+<img width="790" height="577" alt="image" src="https://github.com/user-attachments/assets/caa33cc3-e785-40de-bff5-c87943b4e228" />
