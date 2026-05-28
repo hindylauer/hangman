@@ -9,6 +9,7 @@ using System.Windows.Forms;
 using System.IO;
 using System.Linq;
 using System.Reflection.Metadata;
+using System.Transactions;
 
 namespace Hangman_App
 {
@@ -26,17 +27,17 @@ namespace Hangman_App
         {
             InitializeComponent();
 
-                lstbuttons = new() {btnA, btnB, btnC, btnD, btnE, btnF,
+            lstbuttons = new() {btnA, btnB, btnC, btnD, btnE, btnF,
                                     btnG, btnH, btnI, btnJ, btnK, btnL,
                                     btnM, btnN, btnO, btnP, btnQ, btnR,
                                     btnS, btnT, btnU, btnV, btnW, btnX,
                                     btnY, btnZ
             };
 
-                lstbuttons.ForEach(b => b.Click += SpotButton_Click);
+            lstbuttons.ForEach(b => b.Click += SpotButton_Click);
 
             lstimages = new List<String>()
-               { 
+               {
                     "gallows.png",
                     "head.png",
                     "eyes.png",
@@ -52,9 +53,10 @@ namespace Hangman_App
                }
                 .Select(file => Image.FromFile(Path.Combine(path, file))).ToList();
 
-                lblStatus.Text = "Click start to begin game.";
-                btnStart.Click += BtnStart_Click;
-   
+            lblStatus.Text = "Click start to begin game.";
+            DisableLetterButtons(false);
+            btnStart.Click += BtnStart_Click;
+
         }
 
 
@@ -151,29 +153,29 @@ namespace Hangman_App
 
         private void CheckWin()
         {
-            if(wrongguesses == lstimages.Count())
+            if (wrongguesses == lstimages.Count())
             {
-                lblStatus.Text = "You lost.";
-                DisableLetterButtons();
+                lblStatus.Text = "You lost. The word was " + currentWord + ".";
+                DisableLetterButtons(false);
                 return;
             }
 
-            foreach(Label lbl in tblLabels.Controls)
+            foreach (Label lbl in tblLabels.Controls)
             {
-                if(lbl.Text == "___")
+                if (lbl.Text == "___")
                 {
                     return;
                 }
             }
             lblStatus.Text = "You Win!";
-            DisableLetterButtons();
+            DisableLetterButtons(false);
         }
 
-        private void DisableLetterButtons()
+        private void DisableLetterButtons(bool enabled)
         {
             foreach (Button btn in lstbuttons)
             {
-                btn.Enabled = false;
+                btn.Enabled = enabled;
             }
         }
 
@@ -185,16 +187,16 @@ namespace Hangman_App
 
         }
 
-
-        private void BtnStart_Click(object? sender, EventArgs e)
+        private void StartGame()
         {
+            DisableLetterButtons(true);
             wrongguesses = 0;
 
             picHangman.Image = null;
 
             lblStatus.Text = "";
 
-            foreach(Button btn in lstbuttons)
+            foreach (Button btn in lstbuttons)
             {
                 btn.Enabled = true;
                 btn.BackColor = Color.White;
@@ -204,6 +206,10 @@ namespace Hangman_App
             GetLabels();
         }
 
-    }
+        private void BtnStart_Click(object? sender, EventArgs e)
+        {
+            StartGame();
+        }
 
+    }
 }
