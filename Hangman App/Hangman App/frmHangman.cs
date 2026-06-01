@@ -227,9 +227,9 @@ namespace Hangman_App
                 return true;
             }
 
-            if (!int.TryParse(amountText, out int amount) || amount < 1 || amount > 10)
+            if (!int.TryParse(amountText, out int amount) || amount < 3 || amount > 10)
             {
-                lblStatus.Text = "Enter a number from 1 to 10 before Start, or leave it blank.";
+                lblStatus.Text = "Enter a number from 3 to 10 before Start, or leave it blank.";
                 DisableLetterButtons(false);
                 return false;
             }
@@ -247,10 +247,25 @@ namespace Hangman_App
 
         private void TxtLetterAmount_KeyPress(object? sender, KeyPressEventArgs e)
         {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            if (char.IsControl(e.KeyChar))
+            {
+                return;
+            }
+
+            if (!char.IsDigit(e.KeyChar))
             {
                 e.Handled = true;
-                lblStatus.Text = "Only numbers from 1 to 10 are allowed.";
+                lblStatus.Text = "Only numbers from 3 to 10 are allowed.";
+                return;
+            }
+
+            string proposedAmount = txtLetterAmount.Text.Remove(txtLetterAmount.SelectionStart, txtLetterAmount.SelectionLength)
+                .Insert(txtLetterAmount.SelectionStart, e.KeyChar.ToString());
+
+            if (!IsValidLetterAmountEntry(proposedAmount))
+            {
+                e.Handled = true;
+                lblStatus.Text = "Only numbers from 3 to 10 are allowed before Start.";
             }
         }
 
@@ -262,15 +277,30 @@ namespace Hangman_App
             {
                 txtLetterAmount.Text = digitsOnly;
                 txtLetterAmount.SelectionStart = txtLetterAmount.Text.Length;
-                lblStatus.Text = "Only numbers from 1 to 10 are allowed.";
+                lblStatus.Text = "Only numbers from 3 to 10 are allowed.";
                 return;
             }
 
-            if (int.TryParse(txtLetterAmount.Text, out int amount) && (amount < 1 || amount > 10))
+            if (!IsValidLetterAmountEntry(txtLetterAmount.Text))
             {
                 txtLetterAmount.Clear();
-                lblStatus.Text = "Only numbers from 1 to 10 are allowed before Start.";
+                lblStatus.Text = "Only numbers from 3 to 10 are allowed before Start.";
             }
+        }
+
+        private bool IsValidLetterAmountEntry(string amountText)
+        {
+            if (string.IsNullOrEmpty(amountText))
+            {
+                return true;
+            }
+
+            if (amountText == "1")
+            {
+                return true;
+            }
+
+            return int.TryParse(amountText, out int amount) && amount >= 3 && amount <= 10;
         }
 
         private void BtnStart_Click(object? sender, EventArgs e)

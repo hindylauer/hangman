@@ -131,7 +131,7 @@
             lblLetterAmount.Name = "lblLetterAmount";
             lblLetterAmount.Size = new Size(239, 57);
             lblLetterAmount.TabIndex = 1;
-            lblLetterAmount.Text = "Amount of letters (up to 10)";
+            lblLetterAmount.Text = "Amount of letters(3-10)";
             lblLetterAmount.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // txtLetterAmount
