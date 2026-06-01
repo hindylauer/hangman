@@ -53,7 +53,7 @@ namespace Hangman_App
                }
                 .Select(file => Image.FromFile(Path.Combine(path, file))).ToList();
 
-            lblStatus.Text = "Click start to begin game.";
+            lblStatus.Text = "Enter optional amount before Start, then click Start.";
             DisableLetterButtons(false);
             btnStart.Click += BtnStart_Click;
             txtLetterAmount.KeyPress += TxtLetterAmount_KeyPress;
@@ -229,7 +229,14 @@ namespace Hangman_App
 
             if (!int.TryParse(amountText, out int amount) || amount < 1 || amount > 10)
             {
-                lblStatus.Text = "Enter a number from 1 to 10, or leave it blank.";
+                lblStatus.Text = "Enter a number from 1 to 10 before Start, or leave it blank.";
+                DisableLetterButtons(false);
+                return false;
+            }
+
+            if (!lstwords.Any(word => word.Length == amount))
+            {
+                lblStatus.Text = "No words have " + amount + " letters. Try 3 to 10 or leave it blank.";
                 DisableLetterButtons(false);
                 return false;
             }
@@ -262,7 +269,7 @@ namespace Hangman_App
             if (int.TryParse(txtLetterAmount.Text, out int amount) && (amount < 1 || amount > 10))
             {
                 txtLetterAmount.Clear();
-                lblStatus.Text = "Only numbers from 1 to 10 are allowed.";
+                lblStatus.Text = "Only numbers from 1 to 10 are allowed before Start.";
             }
         }
 

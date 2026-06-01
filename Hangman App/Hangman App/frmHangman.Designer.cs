@@ -97,9 +97,9 @@
             // 
             tblTop.ColumnCount = 4;
             tblTop.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 15F));
-            tblTop.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 30F));
+            tblTop.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 24F));
             tblTop.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 10F));
-            tblTop.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 45F));
+            tblTop.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 51F));
             tblTop.Controls.Add(btnStart, 0, 0);
             tblTop.Controls.Add(lblLetterAmount, 1, 0);
             tblTop.Controls.Add(txtLetterAmount, 2, 0);
@@ -129,17 +129,18 @@
             lblLetterAmount.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lblLetterAmount.Location = new Point(140, 0);
             lblLetterAmount.Name = "lblLetterAmount";
-            lblLetterAmount.Size = new Size(269, 53);
+            lblLetterAmount.Size = new Size(214, 53);
             lblLetterAmount.TabIndex = 1;
-            lblLetterAmount.Text = "amount of letters (up to 10)";
-            lblLetterAmount.TextAlign = ContentAlignment.MiddleRight;
+            lblLetterAmount.Text = "Amount of letters (up to 10)";
+            lblLetterAmount.TextAlign = ContentAlignment.MiddleLeft;
             //
             // txtLetterAmount
             //
             txtLetterAmount.Anchor = AnchorStyles.Left | AnchorStyles.Right;
-            txtLetterAmount.Location = new Point(415, 13);
+            txtLetterAmount.Location = new Point(360, 13);
             txtLetterAmount.MaxLength = 2;
             txtLetterAmount.Name = "txtLetterAmount";
+            txtLetterAmount.PlaceholderText = "Before Start";
             txtLetterAmount.Size = new Size(85, 27);
             txtLetterAmount.TabIndex = 2;
             //
@@ -148,9 +149,9 @@
             lblStatus.AutoSize = true;
             lblStatus.Dock = DockStyle.Fill;
             lblStatus.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblStatus.Location = new Point(506, 0);
+            lblStatus.Location = new Point(451, 0);
             lblStatus.Name = "lblStatus";
-            lblStatus.Size = new Size(410, 53);
+            lblStatus.Size = new Size(465, 53);
             lblStatus.TabIndex = 3;
             lblStatus.TextAlign = ContentAlignment.MiddleCenter;
             // 
