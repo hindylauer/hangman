@@ -25,4 +25,4 @@ Hangman.sln
 
 Do not open an older copied project folder or an already-open Visual Studio window that was loaded before pulling the latest branch. After opening `Hangman.sln`, run **Build > Clean Solution**, then **Build > Rebuild Solution**.
 
-The updated Hangman form includes an optional word-length textbox next to the Start button. Enter a number from 3 to 10 before clicking Start, or leave the textbox blank for a random word length.
+The updated Hangman form includes an optional word-length dropdown next to the Start button. Select a number from 3 to 10 before clicking Start, or leave the dropdown blank for a random word length.

@@ -53,11 +53,11 @@ namespace Hangman_App
                }
                 .Select(file => Image.FromFile(Path.Combine(path, file))).ToList();
 
-            lblStatus.Text = "Enter optional amount before Start, then click Start.";
+            lblLetterAmount.Text = "Amount of letters (3-10)";
+            lblStatus.Text = "Select optional amount before Start, then click Start.";
             DisableLetterButtons(false);
             btnStart.Click += BtnStart_Click;
-            txtLetterAmount.KeyPress += TxtLetterAmount_KeyPress;
-            txtLetterAmount.TextChanged += TxtLetterAmount_TextChanged;
+            cboLetterAmount.SelectedIndex = 0;
 
         }
 
@@ -220,7 +220,7 @@ namespace Hangman_App
         private bool TryGetRequestedLetterAmount(out int? requestedLength)
         {
             requestedLength = null;
-            string amountText = txtLetterAmount.Text.Trim();
+            string amountText = cboLetterAmount.Text.Trim();
 
             if (string.IsNullOrEmpty(amountText))
             {
@@ -229,7 +229,7 @@ namespace Hangman_App
 
             if (!int.TryParse(amountText, out int amount) || amount < 3 || amount > 10)
             {
-                lblStatus.Text = "Enter a number from 3 to 10 before Start, or leave it blank.";
+                lblStatus.Text = "Select a number from 3 to 10 before Start, or leave it blank.";
                 DisableLetterButtons(false);
                 return false;
             }
@@ -243,67 +243,6 @@ namespace Hangman_App
 
             requestedLength = amount;
             return true;
-        }
-
-        private void TxtLetterAmount_KeyPress(object? sender, KeyPressEventArgs e)
-        {
-            if (char.IsControl(e.KeyChar))
-            {
-                return;
-            }
-
-            if (!char.IsDigit(e.KeyChar))
-            {
-                e.Handled = true;
-                lblStatus.Text = "Only numbers from 3 to 10 are allowed.";
-                return;
-            }
-
-            string proposedAmount = txtLetterAmount.Text.Remove(txtLetterAmount.SelectionStart, txtLetterAmount.SelectionLength)
-                .Insert(txtLetterAmount.SelectionStart, e.KeyChar.ToString());
-
-            if (proposedAmount == "1")
-            {
-                txtLetterAmount.Text = "10";
-                txtLetterAmount.SelectionStart = txtLetterAmount.Text.Length;
-                e.Handled = true;
-                return;
-            }
-
-            if (!IsValidLetterAmountEntry(proposedAmount))
-            {
-                e.Handled = true;
-                lblStatus.Text = "Only numbers from 3 to 10 are allowed before Start.";
-            }
-        }
-
-        private void TxtLetterAmount_TextChanged(object? sender, EventArgs e)
-        {
-            string digitsOnly = new(txtLetterAmount.Text.Where(char.IsDigit).ToArray());
-
-            if (txtLetterAmount.Text != digitsOnly)
-            {
-                txtLetterAmount.Text = digitsOnly;
-                txtLetterAmount.SelectionStart = txtLetterAmount.Text.Length;
-                lblStatus.Text = "Only numbers from 3 to 10 are allowed.";
-                return;
-            }
-
-            if (!IsValidLetterAmountEntry(txtLetterAmount.Text))
-            {
-                txtLetterAmount.Clear();
-                lblStatus.Text = "Only numbers from 3 to 10 are allowed before Start.";
-            }
-        }
-
-        private bool IsValidLetterAmountEntry(string amountText)
-        {
-            if (string.IsNullOrEmpty(amountText))
-            {
-                return true;
-            }
-
-            return int.TryParse(amountText, out int amount) && amount >= 3 && amount <= 10;
         }
 
         private void BtnStart_Click(object? sender, EventArgs e)
