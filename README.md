@@ -14,3 +14,15 @@ A word (max 10 letters) is randomly picked by the computer. The computer generat
 **The full spec for the game is in the repo.**
 
 <img width="790" height="577" alt="image" src="https://github.com/user-attachments/assets/caa33cc3-e785-40de-bff5-c87943b4e228" />
+
+## Opening in Visual Studio
+
+To see the latest form changes in Visual Studio, open the solution file at the repository root:
+
+```text
+Hangman.sln
+```
+
+Do not open an older copied project folder or an already-open Visual Studio window that was loaded before pulling the latest branch. After opening `Hangman.sln`, run **Build > Clean Solution**, then **Build > Rebuild Solution**.
+
+The updated Hangman form includes an optional word-length textbox next to the Start button. Enter a number from 3 to 10 before clicking Start, or leave the textbox blank for a random word length.
