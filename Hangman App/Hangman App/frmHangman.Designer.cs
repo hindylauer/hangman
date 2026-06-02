@@ -90,7 +90,7 @@
             tblMain.RowStyles.Add(new RowStyle(SizeType.Percent, 9.90099049F));
             tblMain.RowStyles.Add(new RowStyle(SizeType.Percent, 72.27723F));
             tblMain.RowStyles.Add(new RowStyle(SizeType.Percent, 17.8217831F));
-            tblMain.Size = new Size(925, 600);
+            tblMain.Size = new Size(999, 641);
             tblMain.TabIndex = 0;
             // 
             // tblTop
@@ -110,7 +110,7 @@
             tblTop.RowCount = 1;
             tblTop.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
             tblTop.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
-            tblTop.Size = new Size(919, 53);
+            tblTop.Size = new Size(993, 57);
             tblTop.TabIndex = 0;
             // 
             // btnStart
@@ -118,41 +118,41 @@
             btnStart.Dock = DockStyle.Fill;
             btnStart.Location = new Point(3, 3);
             btnStart.Name = "btnStart";
-            btnStart.Size = new Size(131, 47);
+            btnStart.Size = new Size(142, 51);
             btnStart.TabIndex = 0;
             btnStart.Text = "Start";
             btnStart.UseVisualStyleBackColor = true;
-            //
+            // 
             // lblLetterAmount
-            //
+            // 
             lblLetterAmount.Dock = DockStyle.Fill;
             lblLetterAmount.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblLetterAmount.Location = new Point(140, 0);
+            lblLetterAmount.Location = new Point(151, 0);
             lblLetterAmount.Name = "lblLetterAmount";
-            lblLetterAmount.Size = new Size(214, 53);
+            lblLetterAmount.Size = new Size(232, 57);
             lblLetterAmount.TabIndex = 1;
             lblLetterAmount.Text = "Amount of letters (3-10)";
             lblLetterAmount.TextAlign = ContentAlignment.MiddleLeft;
-            //
+            // 
             // cboLetterAmount
-            //
+            // 
             cboLetterAmount.Anchor = AnchorStyles.Left | AnchorStyles.Right;
             cboLetterAmount.DropDownStyle = ComboBoxStyle.DropDownList;
             cboLetterAmount.FormattingEnabled = true;
             cboLetterAmount.Items.AddRange(new object[] { "", "3", "4", "5", "6", "7", "8", "9", "10" });
-            cboLetterAmount.Location = new Point(360, 13);
+            cboLetterAmount.Location = new Point(389, 14);
             cboLetterAmount.Name = "cboLetterAmount";
-            cboLetterAmount.Size = new Size(85, 28);
+            cboLetterAmount.Size = new Size(93, 28);
             cboLetterAmount.TabIndex = 2;
-            //
+            // 
             // lblStatus
-            //
+            // 
             lblStatus.AutoSize = true;
             lblStatus.Dock = DockStyle.Fill;
             lblStatus.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblStatus.Location = new Point(451, 0);
+            lblStatus.Location = new Point(488, 0);
             lblStatus.Name = "lblStatus";
-            lblStatus.Size = new Size(465, 53);
+            lblStatus.Size = new Size(502, 57);
             lblStatus.TabIndex = 3;
             lblStatus.TextAlign = ContentAlignment.MiddleCenter;
             // 
@@ -164,12 +164,12 @@
             tblMiddle.Controls.Add(tblAlphabet, 1, 0);
             tblMiddle.Controls.Add(pnlMan, 0, 0);
             tblMiddle.Dock = DockStyle.Fill;
-            tblMiddle.Location = new Point(3, 62);
+            tblMiddle.Location = new Point(3, 66);
             tblMiddle.Name = "tblMiddle";
             tblMiddle.RowCount = 2;
             tblMiddle.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
             tblMiddle.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
-            tblMiddle.Size = new Size(919, 427);
+            tblMiddle.Size = new Size(993, 457);
             tblMiddle.TabIndex = 1;
             // 
             // tblAlphabet
@@ -213,13 +213,13 @@
             tblAlphabet.Controls.Add(btnZ, 7, 2);
             tblAlphabet.Controls.Add(btnBlank, 8, 2);
             tblAlphabet.Dock = DockStyle.Fill;
-            tblAlphabet.Location = new Point(324, 3);
+            tblAlphabet.Location = new Point(350, 3);
             tblAlphabet.Name = "tblAlphabet";
             tblAlphabet.RowCount = 3;
             tblAlphabet.RowStyles.Add(new RowStyle(SizeType.Percent, 33.3333321F));
             tblAlphabet.RowStyles.Add(new RowStyle(SizeType.Percent, 33.3333321F));
             tblAlphabet.RowStyles.Add(new RowStyle(SizeType.Percent, 33.3333321F));
-            tblAlphabet.Size = new Size(592, 207);
+            tblAlphabet.Size = new Size(640, 222);
             tblAlphabet.TabIndex = 0;
             // 
             // btnA
@@ -227,7 +227,7 @@
             btnA.Dock = DockStyle.Fill;
             btnA.Location = new Point(3, 3);
             btnA.Name = "btnA";
-            btnA.Size = new Size(59, 62);
+            btnA.Size = new Size(65, 67);
             btnA.TabIndex = 1;
             btnA.Text = "A";
             btnA.UseVisualStyleBackColor = true;
@@ -235,9 +235,9 @@
             // btnB
             // 
             btnB.Dock = DockStyle.Fill;
-            btnB.Location = new Point(68, 3);
+            btnB.Location = new Point(74, 3);
             btnB.Name = "btnB";
-            btnB.Size = new Size(59, 62);
+            btnB.Size = new Size(65, 67);
             btnB.TabIndex = 2;
             btnB.Text = "B";
             btnB.UseVisualStyleBackColor = true;
@@ -245,9 +245,9 @@
             // btnC
             // 
             btnC.Dock = DockStyle.Fill;
-            btnC.Location = new Point(133, 3);
+            btnC.Location = new Point(145, 3);
             btnC.Name = "btnC";
-            btnC.Size = new Size(59, 62);
+            btnC.Size = new Size(65, 67);
             btnC.TabIndex = 3;
             btnC.Text = "C";
             btnC.UseVisualStyleBackColor = true;
@@ -255,9 +255,9 @@
             // btnD
             // 
             btnD.Dock = DockStyle.Fill;
-            btnD.Location = new Point(198, 3);
+            btnD.Location = new Point(216, 3);
             btnD.Name = "btnD";
-            btnD.Size = new Size(59, 62);
+            btnD.Size = new Size(65, 67);
             btnD.TabIndex = 4;
             btnD.Text = "D";
             btnD.UseVisualStyleBackColor = true;
@@ -265,9 +265,9 @@
             // btnE
             // 
             btnE.Dock = DockStyle.Fill;
-            btnE.Location = new Point(263, 3);
+            btnE.Location = new Point(287, 3);
             btnE.Name = "btnE";
-            btnE.Size = new Size(59, 62);
+            btnE.Size = new Size(65, 67);
             btnE.TabIndex = 5;
             btnE.Text = "E";
             btnE.UseVisualStyleBackColor = true;
@@ -275,9 +275,9 @@
             // btnF
             // 
             btnF.Dock = DockStyle.Fill;
-            btnF.Location = new Point(328, 3);
+            btnF.Location = new Point(358, 3);
             btnF.Name = "btnF";
-            btnF.Size = new Size(59, 62);
+            btnF.Size = new Size(65, 67);
             btnF.TabIndex = 6;
             btnF.Text = "F";
             btnF.UseVisualStyleBackColor = true;
@@ -285,9 +285,9 @@
             // btnG
             // 
             btnG.Dock = DockStyle.Fill;
-            btnG.Location = new Point(393, 3);
+            btnG.Location = new Point(429, 3);
             btnG.Name = "btnG";
-            btnG.Size = new Size(59, 62);
+            btnG.Size = new Size(65, 67);
             btnG.TabIndex = 7;
             btnG.Text = "G";
             btnG.UseVisualStyleBackColor = true;
@@ -295,9 +295,9 @@
             // btnH
             // 
             btnH.Dock = DockStyle.Fill;
-            btnH.Location = new Point(458, 3);
+            btnH.Location = new Point(500, 3);
             btnH.Name = "btnH";
-            btnH.Size = new Size(59, 62);
+            btnH.Size = new Size(65, 67);
             btnH.TabIndex = 8;
             btnH.Text = "H";
             btnH.UseVisualStyleBackColor = true;
@@ -305,9 +305,9 @@
             // btnI
             // 
             btnI.Dock = DockStyle.Fill;
-            btnI.Location = new Point(523, 3);
+            btnI.Location = new Point(571, 3);
             btnI.Name = "btnI";
-            btnI.Size = new Size(66, 62);
+            btnI.Size = new Size(66, 67);
             btnI.TabIndex = 9;
             btnI.Text = "I";
             btnI.UseVisualStyleBackColor = true;
@@ -315,9 +315,9 @@
             // btnJ
             // 
             btnJ.Dock = DockStyle.Fill;
-            btnJ.Location = new Point(3, 71);
+            btnJ.Location = new Point(3, 76);
             btnJ.Name = "btnJ";
-            btnJ.Size = new Size(59, 62);
+            btnJ.Size = new Size(65, 67);
             btnJ.TabIndex = 10;
             btnJ.Text = "J";
             btnJ.UseVisualStyleBackColor = true;
@@ -325,9 +325,9 @@
             // btnK
             // 
             btnK.Dock = DockStyle.Fill;
-            btnK.Location = new Point(68, 71);
+            btnK.Location = new Point(74, 76);
             btnK.Name = "btnK";
-            btnK.Size = new Size(59, 62);
+            btnK.Size = new Size(65, 67);
             btnK.TabIndex = 11;
             btnK.Text = "K";
             btnK.UseVisualStyleBackColor = true;
@@ -335,9 +335,9 @@
             // btnL
             // 
             btnL.Dock = DockStyle.Fill;
-            btnL.Location = new Point(133, 71);
+            btnL.Location = new Point(145, 76);
             btnL.Name = "btnL";
-            btnL.Size = new Size(59, 62);
+            btnL.Size = new Size(65, 67);
             btnL.TabIndex = 12;
             btnL.Text = "L";
             btnL.UseVisualStyleBackColor = true;
@@ -345,9 +345,9 @@
             // btnM
             // 
             btnM.Dock = DockStyle.Fill;
-            btnM.Location = new Point(198, 71);
+            btnM.Location = new Point(216, 76);
             btnM.Name = "btnM";
-            btnM.Size = new Size(59, 62);
+            btnM.Size = new Size(65, 67);
             btnM.TabIndex = 13;
             btnM.Text = "M";
             btnM.UseVisualStyleBackColor = true;
@@ -355,9 +355,9 @@
             // btnN
             // 
             btnN.Dock = DockStyle.Fill;
-            btnN.Location = new Point(263, 71);
+            btnN.Location = new Point(287, 76);
             btnN.Name = "btnN";
-            btnN.Size = new Size(59, 62);
+            btnN.Size = new Size(65, 67);
             btnN.TabIndex = 14;
             btnN.Text = "N";
             btnN.UseVisualStyleBackColor = true;
@@ -365,9 +365,9 @@
             // btnO
             // 
             btnO.Dock = DockStyle.Fill;
-            btnO.Location = new Point(328, 71);
+            btnO.Location = new Point(358, 76);
             btnO.Name = "btnO";
-            btnO.Size = new Size(59, 62);
+            btnO.Size = new Size(65, 67);
             btnO.TabIndex = 15;
             btnO.Text = "O";
             btnO.UseVisualStyleBackColor = true;
@@ -375,9 +375,9 @@
             // btnP
             // 
             btnP.Dock = DockStyle.Fill;
-            btnP.Location = new Point(393, 71);
+            btnP.Location = new Point(429, 76);
             btnP.Name = "btnP";
-            btnP.Size = new Size(59, 62);
+            btnP.Size = new Size(65, 67);
             btnP.TabIndex = 16;
             btnP.Text = "P";
             btnP.UseVisualStyleBackColor = true;
@@ -385,9 +385,9 @@
             // btnQ
             // 
             btnQ.Dock = DockStyle.Fill;
-            btnQ.Location = new Point(458, 71);
+            btnQ.Location = new Point(500, 76);
             btnQ.Name = "btnQ";
-            btnQ.Size = new Size(59, 62);
+            btnQ.Size = new Size(65, 67);
             btnQ.TabIndex = 17;
             btnQ.Text = "Q";
             btnQ.UseVisualStyleBackColor = true;
@@ -395,9 +395,9 @@
             // btnR
             // 
             btnR.Dock = DockStyle.Fill;
-            btnR.Location = new Point(523, 71);
+            btnR.Location = new Point(571, 76);
             btnR.Name = "btnR";
-            btnR.Size = new Size(66, 62);
+            btnR.Size = new Size(66, 67);
             btnR.TabIndex = 18;
             btnR.Text = "R";
             btnR.UseVisualStyleBackColor = true;
@@ -405,9 +405,9 @@
             // btnS
             // 
             btnS.Dock = DockStyle.Fill;
-            btnS.Location = new Point(3, 139);
+            btnS.Location = new Point(3, 149);
             btnS.Name = "btnS";
-            btnS.Size = new Size(59, 65);
+            btnS.Size = new Size(65, 70);
             btnS.TabIndex = 19;
             btnS.Text = "S";
             btnS.UseVisualStyleBackColor = true;
@@ -415,9 +415,9 @@
             // btnT
             // 
             btnT.Dock = DockStyle.Fill;
-            btnT.Location = new Point(68, 139);
+            btnT.Location = new Point(74, 149);
             btnT.Name = "btnT";
-            btnT.Size = new Size(59, 65);
+            btnT.Size = new Size(65, 70);
             btnT.TabIndex = 20;
             btnT.Text = "T";
             btnT.UseVisualStyleBackColor = true;
@@ -425,9 +425,9 @@
             // btnU
             // 
             btnU.Dock = DockStyle.Fill;
-            btnU.Location = new Point(133, 139);
+            btnU.Location = new Point(145, 149);
             btnU.Name = "btnU";
-            btnU.Size = new Size(59, 65);
+            btnU.Size = new Size(65, 70);
             btnU.TabIndex = 21;
             btnU.Text = "U";
             btnU.UseVisualStyleBackColor = true;
@@ -435,9 +435,9 @@
             // btnV
             // 
             btnV.Dock = DockStyle.Fill;
-            btnV.Location = new Point(198, 139);
+            btnV.Location = new Point(216, 149);
             btnV.Name = "btnV";
-            btnV.Size = new Size(59, 65);
+            btnV.Size = new Size(65, 70);
             btnV.TabIndex = 22;
             btnV.Text = "V";
             btnV.UseVisualStyleBackColor = true;
@@ -445,9 +445,9 @@
             // btnW
             // 
             btnW.Dock = DockStyle.Fill;
-            btnW.Location = new Point(263, 139);
+            btnW.Location = new Point(287, 149);
             btnW.Name = "btnW";
-            btnW.Size = new Size(59, 65);
+            btnW.Size = new Size(65, 70);
             btnW.TabIndex = 23;
             btnW.Text = "W";
             btnW.UseVisualStyleBackColor = true;
@@ -455,9 +455,9 @@
             // btnX
             // 
             btnX.Dock = DockStyle.Fill;
-            btnX.Location = new Point(328, 139);
+            btnX.Location = new Point(358, 149);
             btnX.Name = "btnX";
-            btnX.Size = new Size(59, 65);
+            btnX.Size = new Size(65, 70);
             btnX.TabIndex = 24;
             btnX.Text = "X";
             btnX.UseVisualStyleBackColor = true;
@@ -465,9 +465,9 @@
             // btnY
             // 
             btnY.Dock = DockStyle.Fill;
-            btnY.Location = new Point(393, 139);
+            btnY.Location = new Point(429, 149);
             btnY.Name = "btnY";
-            btnY.Size = new Size(59, 65);
+            btnY.Size = new Size(65, 70);
             btnY.TabIndex = 25;
             btnY.Text = "Y";
             btnY.UseVisualStyleBackColor = true;
@@ -475,9 +475,9 @@
             // btnZ
             // 
             btnZ.Dock = DockStyle.Fill;
-            btnZ.Location = new Point(458, 139);
+            btnZ.Location = new Point(500, 149);
             btnZ.Name = "btnZ";
-            btnZ.Size = new Size(59, 65);
+            btnZ.Size = new Size(65, 70);
             btnZ.TabIndex = 26;
             btnZ.Text = "Z";
             btnZ.UseVisualStyleBackColor = true;
@@ -486,9 +486,9 @@
             // 
             btnBlank.Dock = DockStyle.Fill;
             btnBlank.Enabled = false;
-            btnBlank.Location = new Point(523, 139);
+            btnBlank.Location = new Point(571, 149);
             btnBlank.Name = "btnBlank";
-            btnBlank.Size = new Size(66, 65);
+            btnBlank.Size = new Size(66, 70);
             btnBlank.TabIndex = 27;
             btnBlank.UseVisualStyleBackColor = true;
             // 
@@ -499,7 +499,7 @@
             pnlMan.Location = new Point(3, 3);
             pnlMan.Name = "pnlMan";
             tblMiddle.SetRowSpan(pnlMan, 2);
-            pnlMan.Size = new Size(315, 421);
+            pnlMan.Size = new Size(341, 451);
             pnlMan.TabIndex = 1;
             // 
             // picHangman
@@ -507,7 +507,7 @@
             picHangman.Dock = DockStyle.Fill;
             picHangman.Location = new Point(0, 0);
             picHangman.Name = "picHangman";
-            picHangman.Size = new Size(315, 421);
+            picHangman.Size = new Size(341, 451);
             picHangman.SizeMode = PictureBoxSizeMode.Zoom;
             picHangman.TabIndex = 0;
             picHangman.TabStop = false;
@@ -517,18 +517,18 @@
             tblLabels.ColumnCount = 1;
             tblLabels.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
             tblLabels.Dock = DockStyle.Fill;
-            tblLabels.Location = new Point(3, 495);
+            tblLabels.Location = new Point(3, 529);
             tblLabels.Name = "tblLabels";
             tblLabels.RowCount = 1;
             tblLabels.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
-            tblLabels.Size = new Size(919, 102);
+            tblLabels.Size = new Size(993, 109);
             tblLabels.TabIndex = 2;
             // 
             // frmHangman
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(925, 600);
+            ClientSize = new Size(999, 641);
             Controls.Add(tblMain);
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "frmHangman";
