@@ -32,6 +32,8 @@
             tblMain = new TableLayoutPanel();
             tblTop = new TableLayoutPanel();
             btnStart = new Button();
+            lblLetterAmount = new Label();
+            cboLetterAmount = new ComboBox();
             lblStatus = new Label();
             tblMiddle = new TableLayoutPanel();
             tblAlphabet = new TableLayoutPanel();
@@ -93,11 +95,15 @@
             // 
             // tblTop
             // 
-            tblTop.ColumnCount = 2;
+            tblTop.ColumnCount = 4;
             tblTop.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 15F));
-            tblTop.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 85F));
+            tblTop.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 24F));
+            tblTop.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 10F));
+            tblTop.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 51F));
             tblTop.Controls.Add(btnStart, 0, 0);
-            tblTop.Controls.Add(lblStatus, 1, 0);
+            tblTop.Controls.Add(lblLetterAmount, 1, 0);
+            tblTop.Controls.Add(cboLetterAmount, 2, 0);
+            tblTop.Controls.Add(lblStatus, 3, 0);
             tblTop.Dock = DockStyle.Fill;
             tblTop.Location = new Point(3, 3);
             tblTop.Name = "tblTop";
@@ -116,16 +122,38 @@
             btnStart.TabIndex = 0;
             btnStart.Text = "Start";
             btnStart.UseVisualStyleBackColor = true;
-            // 
+            //
+            // lblLetterAmount
+            //
+            lblLetterAmount.Dock = DockStyle.Fill;
+            lblLetterAmount.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblLetterAmount.Location = new Point(140, 0);
+            lblLetterAmount.Name = "lblLetterAmount";
+            lblLetterAmount.Size = new Size(214, 53);
+            lblLetterAmount.TabIndex = 1;
+            lblLetterAmount.Text = "Amount of letters (3-10)";
+            lblLetterAmount.TextAlign = ContentAlignment.MiddleLeft;
+            //
+            // cboLetterAmount
+            //
+            cboLetterAmount.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            cboLetterAmount.DropDownStyle = ComboBoxStyle.DropDownList;
+            cboLetterAmount.FormattingEnabled = true;
+            cboLetterAmount.Items.AddRange(new object[] { "", "3", "4", "5", "6", "7", "8", "9", "10" });
+            cboLetterAmount.Location = new Point(360, 13);
+            cboLetterAmount.Name = "cboLetterAmount";
+            cboLetterAmount.Size = new Size(85, 28);
+            cboLetterAmount.TabIndex = 2;
+            //
             // lblStatus
-            // 
+            //
             lblStatus.AutoSize = true;
             lblStatus.Dock = DockStyle.Fill;
             lblStatus.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblStatus.Location = new Point(140, 0);
+            lblStatus.Location = new Point(451, 0);
             lblStatus.Name = "lblStatus";
-            lblStatus.Size = new Size(776, 53);
-            lblStatus.TabIndex = 1;
+            lblStatus.Size = new Size(465, 53);
+            lblStatus.TabIndex = 3;
             lblStatus.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // tblMiddle
@@ -520,6 +548,8 @@
         private TableLayoutPanel tblMain;
         private TableLayoutPanel tblTop;
         private Button btnStart;
+        private Label lblLetterAmount;
+        private ComboBox cboLetterAmount;
         private Label lblStatus;
         private TableLayoutPanel tblMiddle;
         private TableLayoutPanel tblAlphabet;

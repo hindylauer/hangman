@@ -53,16 +53,21 @@ namespace Hangman_App
                }
                 .Select(file => Image.FromFile(Path.Combine(path, file))).ToList();
 
-            lblStatus.Text = "Click start to begin game.";
+            lblStatus.Text = "Select optional amount before Start, then click Start.";
             DisableLetterButtons(false);
             btnStart.Click += BtnStart_Click;
+            cboLetterAmount.SelectedIndex = 0;
 
         }
 
 
         private string GetRandomWord()
         {
-            return lstwords[rnd.Next(lstwords.Count)].ToString().ToLower();
+            List<string> availableWords = int.TryParse(cboLetterAmount.Text, out int wordLength)
+                ? lstwords.Where(word => word.Length == wordLength).ToList()
+                : lstwords;
+
+            return availableWords[rnd.Next(availableWords.Count)].ToString().ToLower();
         }
 
         private void GetLabels()
