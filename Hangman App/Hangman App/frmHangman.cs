@@ -53,7 +53,6 @@ namespace Hangman_App
                }
                 .Select(file => Image.FromFile(Path.Combine(path, file))).ToList();
 
-            lblLetterAmount.Text = "Amount of letters (3-10)";
             lblStatus.Text = "Select optional amount before Start, then click Start.";
             DisableLetterButtons(false);
             btnStart.Click += BtnStart_Click;
@@ -62,19 +61,19 @@ namespace Hangman_App
         }
 
 
-        private string GetRandomWord(int? requestedLength = null)
+        private string GetRandomWord()
         {
-            List<string> availableWords = requestedLength.HasValue
-                ? lstwords.Where(word => word.Length == requestedLength.Value).ToList()
+            List<string> availableWords = int.TryParse(cboLetterAmount.Text, out int wordLength)
+                ? lstwords.Where(word => word.Length == wordLength).ToList()
                 : lstwords;
 
             return availableWords[rnd.Next(availableWords.Count)].ToString().ToLower();
         }
 
-        private void GetLabels(int? requestedLength = null)
+        private void GetLabels()
         {
             tblLabels.Controls.Clear();
-            currentWord = GetRandomWord(requestedLength);
+            currentWord = GetRandomWord();
 
             tblLabels.ColumnStyles.Clear();
             tblLabels.RowStyles.Clear();
@@ -195,11 +194,6 @@ namespace Hangman_App
 
         private void StartGame()
         {
-            if (!TryGetRequestedLetterAmount(out int? requestedLength))
-            {
-                return;
-            }
-
             DisableLetterButtons(true);
             wrongguesses = 0;
 
@@ -214,35 +208,7 @@ namespace Hangman_App
                 btn.ForeColor = Color.Black;
             }
 
-            GetLabels(requestedLength);
-        }
-
-        private bool TryGetRequestedLetterAmount(out int? requestedLength)
-        {
-            requestedLength = null;
-            string amountText = cboLetterAmount.Text.Trim();
-
-            if (string.IsNullOrEmpty(amountText))
-            {
-                return true;
-            }
-
-            if (!int.TryParse(amountText, out int amount) || amount < 3 || amount > 10)
-            {
-                lblStatus.Text = "Select a number from 3 to 10 before Start, or leave it blank.";
-                DisableLetterButtons(false);
-                return false;
-            }
-
-            if (!lstwords.Any(word => word.Length == amount))
-            {
-                lblStatus.Text = "No words have " + amount + " letters. Try 3 to 10 or leave it blank.";
-                DisableLetterButtons(false);
-                return false;
-            }
-
-            requestedLength = amount;
-            return true;
+            GetLabels();
         }
 
         private void BtnStart_Click(object? sender, EventArgs e)
